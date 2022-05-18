@@ -3,8 +3,9 @@ const express = require('express')
 const noteRoutes = require('./routes/notes-routes')
 const htmlRoutes = require('./routes/html-routes')
 
-
-
+// .gitingore
+// node template
+// mac template
 
 const PORT = process.env.PORT || 3001;
 

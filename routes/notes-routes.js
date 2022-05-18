@@ -5,7 +5,7 @@ const uuid = require('../helpers/uuid');
 // GET Route for retrieving all the tips
 router.get('/notes', (req, res) => {
  controller
-    .getAllNotes()
+    .getNotes()
     .then((notes)=> {
         return res.json(notes)
     })
