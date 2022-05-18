@@ -7,13 +7,15 @@ router.get('/notes', (req, res) => {
  controller
     .getNotes()
     .then((notes)=> {
+      console.log(notes)
         return res.json(notes)
+        
     })
     .catch((err)=>res.status(500).json(err))
 });
 
 // POST Route for a new UX/UI tip
-router.post('/', (req, res) => {
+router.post('/notes', (req, res) => {
   console.log(req.body);
 
   const { title, text } = req.body;

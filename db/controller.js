@@ -7,10 +7,10 @@ const writeFilePromise = util.promisify(fs.writeFile);
 
 class Controller {
     read(){
-        return readFilePromise('db/db.json', 'utf-8')
+        return readFilePromise('./db.json', 'utf-8')
     }
     write(note){
-        return writeFilePromise('db/db.json', JSON.stringify(note))
+        return writeFilePromise('./db.json', JSON.stringify(note))
     }
     getNotes(){
         return this.read().then((notes)=>{
@@ -18,7 +18,7 @@ class Controller {
             try{
                 parsedNotes = [].concat(JSON.parse(notes))
             } catch (err){
-                parseNotes = []
+                parsedNotes = []
             }
             return parsedNotes
         })
