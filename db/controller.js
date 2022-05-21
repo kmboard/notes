@@ -13,8 +13,9 @@ class Controller {
     write(note){
         return writeFilePromise(path.join(__dirname, "./db.json"), JSON.stringify(note));
     }
-    getNotes(){
-        return this.read().then((notes)=>{
+
+    getNotes() {
+     return this.read().then((notes)=>{
             let parsedNotes;
             try{
                 parsedNotes = [].concat(JSON.parse(notes))
@@ -24,7 +25,20 @@ class Controller {
             return parsedNotes
         })
     }
+
+    readAndwrite(note) {
+        const {title, text} = note
+        if (!title || !text) {
+            throw new Error("Note requires a title and text")
+        }
+        const newNote = { title, text, id: uuid() }
+        return this.getNotes()
+         .then((notes)=>[...notes, newNote])
+         .then((updatedNotes)=>this.write(updatedNotes))
+         .then(()=> newNote)
+    }
 }
+
 
 
 module.exports = new Controller()
