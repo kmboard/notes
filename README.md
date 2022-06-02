@@ -26,3 +26,12 @@ THEN that note appears in the right-hand column
 WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
 ```
+
+## Deployee Links
+https://git.heroku.com/notes-express-gt.git
+https://github.com/kmboard/notes
+
+
+## Pictures
+[!alt text](/notes/Assets/11-express-homework-demo-01.png)
+[!alt text](/notes/Assets/11-express-homework-demo-02.png)
